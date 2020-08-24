@@ -49,10 +49,10 @@ void APawnTank::CalculateRotateInput(float Value)
 
 void APawnTank::Move() 
 {
-    
+    AddActorLocalOffset(MoveDirection, true);
 }
 
 void APawnTank::Rotate() 
 {
-    
+    AddActorLocalRotation(RotationDirection, true);
 }
