@@ -26,6 +26,8 @@ void APawnTank::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+    Rotate();
+    Move();
 }
 
 // Called to bind functionality to input
