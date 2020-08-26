@@ -35,7 +35,7 @@ void APawnTank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
     PlayerInputComponent->BindAxis("MoveForward", this, &APawnTank::CalculateMoveInput);
-    PlayerInputComponent->BindAxis("TurnInput", this, &APawnTank::CalculateRotateInput);
+    PlayerInputComponent->BindAxis("Turn", this, &APawnTank::CalculateRotateInput);
 }
 void APawnTank::CalculateMoveInput(float Value) 
 {
@@ -45,7 +45,7 @@ void APawnTank::CalculateMoveInput(float Value)
 void APawnTank::CalculateRotateInput(float Value) 
 {
     float RotateAmount = Value * RotateSpeed * GetWorld()->DeltaTimeSeconds;
-    FRotator Rotation = FRotator(0, Rotation, 0);
+    FRotator Rotation = FRotator(0, RotateAmount, 0);
     RotationDirection = FQuat(Rotation);
 }
 
